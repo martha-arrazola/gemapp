@@ -3,14 +3,14 @@ Este es un proyecto colaborativo desarrollado como parte del Master del Immune T
 **Autores:** Alba Panato, Angel Lizarzado y Martha Arrázola
 
 **Estructura del Frontend**
+# Proyecto Next.js
 
-Proyecto Next.js
+Este proyecto utiliza Next.js con el sistema de enrutamiento basado en la estructura de archivos dentro de la carpeta `app`. A continuación, se describe la estructura de rutas y su funcionalidad.
 
-Este proyecto utiliza Next.js con el sistema de enrutamiento basado en la estructura de archivos dentro de la carpeta app. A continuación, se describe la estructura de rutas y su funcionalidad.
-Creación del Proyecto
-
+## Creación del Proyecto
 Para instalar todas las dependencias del proyecto y configurarlo correctamente, sigue estos pasos:
 
+```sh
 # Crear un nuevo proyecto Next.js
 npx create-next-app@latest capstone
 
@@ -22,37 +22,45 @@ npm install
 
 # Iniciar el servidor en modo desarrollo
 npm run dev
+```
 
-Instalación de Librerías Adicionales
-Librerías para Formularios
+### Instalación de Librerías Adicionales
 
+#### Librerías para Formularios
+```sh
 npm install react-hook-form
+```
 
-Librerías para Ubicación (Mapas con Leaflet)
-
+#### Librerías para Ubicación (Mapas con Leaflet)
+```sh
 npm install react-leaflet leaflet
+```
 
-Instalación de Iconos
-
+#### Instalación de Iconos
+```sh
 npm install lucide-react
+```
 
-Instalación para Manejo de Cookies
-
+#### Instalación para Manejo de Cookies
+```sh
 npm install js-cookie
+```
 
-Instalación de ESLint y Prettier
-
+#### Instalación de ESLint y Prettier
+```sh
 npm install --save-dev eslint-config-next eslint-config-prettier eslint-plugin-prettier --legacy-peer-deps
-
-Instalar Framer Motion
-
+```
+#### Instalar Framer Motion
+```sh
 npm install framer-motion
+```
 
-Instalación y Configuración
-Configuración ESLint y Prettier
+## Instalación y Configuración
 
-El proyecto usa ESLint con una configuración personalizada para garantizar buenas prácticas de desarrollo. La configuración se encuentra en el archivo .eslintrc.cjs.
+### Configuración ESLint y Prettier
+El proyecto usa `ESLint` con una configuración personalizada para garantizar buenas prácticas de desarrollo. La configuración se encuentra en el archivo `.eslintrc.cjs`.
 
+```js
 module.exports = {
   extends: [
     "next/core-web-vitals", 
@@ -94,31 +102,33 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
   },
 };
+```
 
-Estructura de Rutas
+## Estructura de Rutas
 
-El proyecto sigue la convención de enrutamiento de Next.js App Router, donde cada carpeta y archivo dentro de src/app define una ruta específica de la aplicación.
-Descripción de Carpetas
+El proyecto sigue la convención de enrutamiento de Next.js App Router, donde cada carpeta y archivo dentro de `src/app` define una ruta específica de la aplicación.
+### Descripción de Carpetas
 
-    (auth)/: Contiene las rutas de autenticación.
-        /login: Página de inicio de sesión.
-        /registro: Página de registro de una organización.
+- **(auth)/**: Contiene las rutas de autenticación.
+  - `/login`: Página de inicio de sesión.
+  - `/registro`: Página de registro de una organización.
 
-    (default)/: Contiene las páginas principales de la aplicación.
-        /[id]: Ruta dinámica basada en un ID.
-        /about: Página de información sobre la aplicación y los desarrolladores.
-        /agregar-fuente: Formulario para agregar una fuentes documentales .
-        /agregar-suceso: Formulario para agregar un nuevo caso.
-        /agregar-testigo: Formulario para agregar un nuevo testigo.
-        /agregar-victima: Formulario para agregar una nueva víctima.
-        /validacion: Página para validaciones una vez la organización está logeada con exito.
+- **(default)/**: Contiene las páginas principales de la aplicación.
+  - `/[id]`: Ruta dinámica basada en un ID.
+  - `/about`: Página de información sobre la aplicación y los desarrolladores.
+  - `/agregar-fuente`: Formulario para agregar una fuentes documentales .
+  - `/agregar-suceso`: Formulario para agregar un nuevo caso.
+  - `/agregar-testigo`: Formulario para agregar un nuevo testigo.
+  - `/agregar-victima`: Formulario para agregar una nueva víctima.
+  - `/validacion`: Página para validaciones una vez la organización está logeada con exito.
 
-    Otros archivos:
-        layout.jsx: Define la estructura global de la aplicación.
-        page.jsx: Página principal de la aplicación.
-        favicon.ico: Ícono de la aplicación. // Actualmente el de Next.js, cambiar por logo de gemapp cuando esté creado
-        globals.css: Estilos globales de la aplicación.
-
+- **Otros archivos**:
+  - `layout.jsx`: Define la estructura global de la aplicación.
+  - `page.jsx`: Página principal de la aplicación.
+  - `favicon.ico`: Ícono de la aplicación. // Actualmente el de Next.js, cambiar por logo de gemapp cuando esté creado
+  - `globals.css`: Estilos globales de la aplicación.
+  - 
+```
 📂 src
 ├── 📂 app
 │   ├── 📂 (auth)
@@ -147,19 +157,20 @@ Descripción de Carpetas
 │   ├── 📄 page.jsx
 │   ├── 📄 favicon.ico
 │   ├── 📄 globals.css
+```
 
-Estructura de Componentes
-Descripción de Carpetas
+## Estructura de Componentes
+### Descripción de Carpetas
 
-    error/: Manejo de errores y mensajes relacionados.
-    footer/: Contiene el componente de pie de página.
-    form-components/: Componentes reutilizables para formularios como botones, entradas de texto y selectores.
-    forms/: Formularios específicos para distintos tipos de datos (incidentes, víctimas, testigos).
-    header/: Contiene el encabezado de la aplicación.
-    location/: Componentes relacionados con la ubicación y mapas.
-    usuario/: Componentes de autenticación y validación de usuario.
-    validation/: Componentes para validación de datos y visualización de tablas.
-
+- **error/**: Manejo de errores y mensajes relacionados.
+- **footer/**: Contiene el componente de pie de página.
+- **form-components/**: Componentes reutilizables para formularios como botones, entradas de texto y selectores.
+- **forms/**: Formularios específicos para distintos tipos de datos (incidentes, víctimas, testigos).
+- **header/**: Contiene el encabezado de la aplicación.
+- **location/**: Componentes relacionados con la ubicación y mapas.
+- **usuario/**: Componentes de autenticación y validación de usuario.
+- **validation/**: Componentes para validación de datos y visualización de tablas.
+```
 📂 components
 ├── 📂 error
 │   ├── 📄 ErrorMessage.jsx
@@ -203,14 +214,15 @@ Descripción de Carpetas
 │   ├── 📄 ActionModal.jsx
 │   ├── 📄 IncidentTable.jsx
 │   ├── 📄 ValidationView.jsx
+```
 
-Estructura de datos , servicios y utilidades
-Descripción de Carpetas
+## Estructura de datos , servicios y utilidades
+### Descripción de Carpetas
+- **data/**: Contiene archivos relacionados con la gestión y almacenamiento de datos de incidentes.
+- **services/**: Implementa la lógica de negocio y validaciones relacionadas con los usuarios, testigos y víctimas.
+- **utils/**: Contiene utilidades generales como clases y constantes reutilizables en la aplicación.
 
-    data/: Contiene archivos relacionados con la gestión y almacenamiento de datos de incidentes.
-    services/: Implementa la lógica de negocio y validaciones relacionadas con los usuarios, testigos y víctimas.
-    utils/: Contiene utilidades generales como clases y constantes reutilizables en la aplicación.
-
+```
 📂 data
 ├── 📄 all-incidents.js
 ├── 📄 incidents.js
@@ -224,11 +236,13 @@ Descripción de Carpetas
 📂 utils
 ├── 📄 classes.js
 ├── 📄 constants.js
+```
 
-Configuración de package.json
 
-El archivo package.json contiene los scripts de ejecución y dependencias clave para el proyecto:
+### Configuración de `package.json`
+El archivo `package.json` contiene los scripts de ejecución y dependencias clave para el proyecto:
 
+```json
 {
   "name": "capstone",
   "version": "0.1.0",
@@ -268,25 +282,21 @@ El archivo package.json contiene los scripts de ejecución y dependencias clave 
     "tailwindcss": "^3.4.1"
   }
 }
+```
 
-Notas Finales
+## Notas Finales
 
-    Este proyecto sigue la estructura del App Router de Next.js.
+- Este proyecto sigue la estructura del **App Router** de Next.js.
+- **(auth)/**: Contiene las rutas de autenticación.
+- **(default)/**: Contiene las páginas principales de la aplicación.
+- Se utilizan layouts (`layout.js`, `layout.jsx`) para definir estructuras de página reutilizables.
+- Los archivos en `public/` son recursos estáticos accesibles desde el navegador.
+- Los componentes están organizados en `components/` para facilitar la reutilización y modularidad del código.
+- Se incluyen datos de prueba en `data/`, hooks personalizados en `hooks/` y utilidades en `utils/`.
 
-    (auth)/: Contiene las rutas de autenticación.
+- **Next.js 15**: Se ha actualizado a la última versión para mejorar el rendimiento y optimización.
+- **TailwindCSS**: Se configura en `tailwind.config.mjs` y `postcss.config.mjs`.
+- **Mapas con Leaflet**: Se utiliza `leaflet` y `react-leaflet` para integrar mapas interactivos.
 
-    (default)/: Contiene las páginas principales de la aplicación.
 
-    Se utilizan layouts (layout.js, layout.jsx) para definir estructuras de página reutilizables.
 
-    Los archivos en public/ son recursos estáticos accesibles desde el navegador.
-
-    Los componentes están organizados en components/ para facilitar la reutilización y modularidad del código.
-
-    Se incluyen datos de prueba en data/, hooks personalizados en hooks/ y utilidades en utils/.
-
-    Next.js 15: Se ha actualizado a la última versión para mejorar el rendimiento y optimización.
-
-    TailwindCSS: Se configura en tailwind.config.mjs y postcss.config.mjs.
-
-    Mapas con Leaflet: Se utiliza leaflet y react-leaflet para integrar mapas interactivos.

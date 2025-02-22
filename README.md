@@ -1,6 +1,8 @@
-Este es un proyecto colaborativo desarrollado como parte del Master del Immune Technology Instittue. 
+GemApp (Geolocated Emergency Mapping Application) es un proyecto colaborativo desarrollado como parte del Master del Immune Technology Instittue. El objetivo del proyecto es aportar conocimiento verificable sobre desastres naturales y crisis humanitarias. Los datos recabados serán verificados para permitir a la sociedad civil y a las administraciones públicas salvar vidas en situaciones de emergencia mediante una toma de decisiones basada en datos verificables y correctamente geoposicionados.
 
-**Autores:** Alba Panato, Angel Lizarzado y Martha Arrázola
+ **Implementación del Software:** Alba Panato, Angel Lizarzado y Martha Arrázola
+
+Puedes ver la versión de producción de este proyecton en htps://
 
 #**Estructura del Frontend**
 # Proyecto Next.js

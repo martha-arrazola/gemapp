@@ -1,7 +1,9 @@
 "use client";
 import { Button } from "@/components/form-components/Button";
 import { FormInput } from "@/components/form-components/FormInput";
-import { createVerificator } from "@/services/verificator";
+import { ID_COOKIES_KEY, TOKEN_COOKIES_KEY } from "@/constants";
+import { createVerificator } from "@/services/auth";
+import { persistDataInCookies } from "@/utils/cookies";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -23,12 +25,10 @@ export default function RegisterForm() {
     setIsSubmitting(true);
     try {
       const res = await createVerificator(data);
-      if (res.token) {
-        // Guardar token en cookies de forma segura
-        document.cookie = `jwt=${res.token}; path=/; Secure; HttpOnly; SameSite=Strict; max-age=86400`; // Expira en 1 día
-        localStorage.setItem("jwt", res.token);
 
-        // Redirigir a la página principal después del registro
+      if (res.token && res.id_verificador) {
+        persistDataInCookies(TOKEN_COOKIES_KEY, res.token);
+        persistDataInCookies(ID_COOKIES_KEY, res.id_verificador);
         router.push("/validacion");
       } else {
         throw new Error(res.error || "No se pudo registrar el usuario.");
@@ -119,7 +119,7 @@ export default function RegisterForm() {
         <FormInput
           label="Contraseña"
           type="password"
-          {...register("password", {
+          {...register("contraseña", {
             required: "La contraseña es obligatoria",
             minLength: {
               value: 8,

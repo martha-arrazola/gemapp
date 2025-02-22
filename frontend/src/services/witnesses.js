@@ -1,6 +1,5 @@
 export async function createWitness(data) {
   try {
-    console.log(data);
     if (!process.env.NEXT_PUBLIC_BACKEND_URL) {
       throw new Error("Falta la variable de entorno NEXT_PUBLIC_BACKEND_URL");
     }
@@ -17,6 +16,7 @@ export async function createWitness(data) {
         telefono: data.telefono,
         movil: data.movil,
         sexo: data.sexo,
+        parentesco: data.parentesco,
         email: data.email,
         declaracion: data.declaracion,
       }),
@@ -26,6 +26,7 @@ export async function createWitness(data) {
       throw new Error("Error al enviar los datos del testigo");
     }
     const result = await response.json();
+
     return result; // Retorna la respuesta del servidor
   } catch (error) {
     // console.error("Error enviando los datos:", error);

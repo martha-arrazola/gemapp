@@ -12,7 +12,13 @@ const verificadorRoutes = require("./routes/verificadorRoutes");
 const fuenteRoutes = require("./routes/fuenteRoutes");
 
 // Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: ["https://gemapp.es", "http://localhost:3000"], 
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+};
+
+app.use(cors(corsOptions)); 
 app.use(express.json());
 
 // Rutas
@@ -25,6 +31,6 @@ app.use("/api/fuentes", fuenteRoutes);
 
 // Puerto
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Servidor corriendo en el puerto ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Servidor corriendo en https://0.0.0.0:${PORT}`);
 });

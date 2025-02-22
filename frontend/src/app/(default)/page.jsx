@@ -4,11 +4,11 @@ import { getIncidents } from "@/services/incidents";
 import Link from "next/link";
 
 export default async function HomePage() {
-  const response = await getIncidents({});
-  if (!response || !response.data) {
+  const response = await getIncidents();
+  if (!response) {
     return <ErrorMessage />;
   }
-  const incidents = response.data;
+  const incidents = response;
 
   return (
     <div className="flex flex-col gap-11 text-center">
@@ -24,11 +24,13 @@ export default async function HomePage() {
         locations={incidents.map((location) => ({
           popupContent: (
             <div>
-              <h3>{location.nombre}</h3>
-              <Link href={location.id.toString()}>Ver más información</Link>
+              <h3>{location.nombre_caso}</h3>
+              <Link href={location.id_caso.toString()}>
+                Ver más información
+              </Link>
             </div>
           ),
-          position: Object.values(location.coordenadas),
+          position: Object.values(location.coordenadas.split(",")),
         }))}
       />
     </div>

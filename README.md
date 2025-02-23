@@ -2,7 +2,7 @@ GemApp (Geolocated Emergency Mapping Application) es un proyecto colaborativo de
 
  **Implementación del Software:** Alba Panato, Angel Lizarzado y Martha Arrázola
 
-Puedes ver la versión de producción de este proyecton en htps://gemapp.es
+Puedes ver la versión de producción de este proyecto en htps://gemapp.es
 
 #**Estructura del Frontend**
 # Proyecto Next.js
